@@ -62,4 +62,20 @@ describe('String Class', function() {
 
     });
   });
+
+  describe('Case for isQuestion', function() {
+    it('should return true for `Is there moon?`', function() {
+      var str = 'Is there moon?';
+      expect(str.isQuestion()).toBeTruthy();
+    });
+
+    it('should return true for `Are there black holes?`', function() {
+      var str = 'Are there black holes?';
+      expect(str.isQuestion()).toBeTruthy();
+    });
+
+    xit('should be a typeof `Boolean`', function() {
+
+    });
+  });
 });
