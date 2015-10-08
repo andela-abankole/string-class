@@ -11,7 +11,23 @@ describe('String Class', function() {
     });
 
     xit('should be a typeof `Boolean`', function() {
-      
+
+    });
+  });
+
+  describe('Case for toUpper', function() {
+    it('should return `MOON` for `moon`', function() {
+      var str = 'moon';
+      expect(str.toUpper()).toEqual('MOON');
+    });
+
+    it('should return `PLUTO` for `Pluto`', function() {
+      var str = 'Pluto';
+      expect(str.toUpper()).toEqual('PLUTO');
+    });
+
+    xit('should be a typeof `String`', function() {
+
     });
   });
 });
