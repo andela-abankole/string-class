@@ -30,4 +30,20 @@ describe('String Class', function() {
 
     });
   });
+
+  describe('Case for toLower', function() {
+    it('should return `jupiter` for `JUPITER`', function() {
+      var str = 'JUPITER';
+      expect(str.toLower()).toEqual('jupiter');
+    });
+
+    it('should return `sun` for `SUN`', function() {
+      var str = 'SUN';
+      expect(str.toLower()).toEqual('sun');
+    });
+
+    xit('should be a typeof `String`', function() {
+
+    });
+  });  
 });
