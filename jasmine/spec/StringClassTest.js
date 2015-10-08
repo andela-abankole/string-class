@@ -124,4 +124,20 @@ describe('String Class', function() {
 
     });
   });
+
+  describe('Case for fromCurrency', function() {
+    it('should return `11111.11` for `11,111.11`', function() {
+      var str = '11,111.11';
+      expect(str.fromCurrency()).toEqual(11111.11);
+    });
+
+    it('should return `100000.00` for `100,000.00`', function() {
+      var str = '100,000.00';
+      expect(str.fromCurrency()).toEqual(100000.00);
+    });
+
+    xit('should be a typeof `Number`', function() {
+
+    });
+  });
 });
