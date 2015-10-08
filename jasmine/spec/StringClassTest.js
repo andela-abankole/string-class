@@ -108,4 +108,20 @@ describe('String Class', function() {
 
     });
   });
+
+  describe('Case for toCurrency', function() {
+    it('should return `11,111.11` for `11111.11`', function() {
+      var num = 11111.11;
+      expect(num.toCurrency()).toEqual('11,111.11');
+    });
+
+    it('should return `100,000.00` for `100000.00`', function() {
+      var num = 100000.00;
+      expect(num.toCurrency()).toEqual('100,000.00');
+    });
+
+    xit('should be a typeof `String`', function() {
+
+    });
+  });
 });
