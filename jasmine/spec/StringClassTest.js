@@ -92,4 +92,20 @@ describe('String Class', function() {
 
     });
   });
+
+  describe('Case for wordCount', function() {
+    it('should return 1 for `Galaxy`', function() {
+      var str = 'Galaxy';
+      expect(str.wordCount()).toEqual(1);
+    });
+
+    it('should return 4 for `Mercury is really hot`', function() {
+      var str = 'Mercury is really hot';
+      expect(str.wordCount()).toEqual(4);
+    });
+
+    xit('should be a typeof `Number`', function() {
+
+    });
+  });
 });
