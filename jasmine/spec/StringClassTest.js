@@ -78,4 +78,18 @@ describe('String Class', function() {
 
     });
   });
+
+  describe('Case for words', function() {
+    it('should return ["Mars", "has", "red", "sand"] for `Mars has red sand`, and an instanceof Array', function() {
+      var expectedWords = ["Mars", "has", "red", "sand"];
+      var word = 'Mars has red sand';
+
+      expect(word.word()).toEqual(expectedWords);
+      expect(expectedWords instanceof Array).toBeTruthy();
+    });
+
+    xit('should be a typeof `Object`', function() {
+
+    });
+  });
 });
