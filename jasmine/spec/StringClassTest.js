@@ -46,4 +46,20 @@ describe('String Class', function() {
 
     });
   });  
+
+  describe('Case for ucFirst', function() {
+    it('should return `Saturn` for `saturn`', function() {
+      var str = 'saturn';
+      expect(str.ucFirst()).toEqual('Saturn');
+    });
+
+    it('should return `Black Hole` for `black hole`', function() {
+      var str = 'black hole';
+      expect(str.ucFirst()).toEqual('Black Hole');
+    });
+
+    xit('should be a typeof `String`', function() {
+
+    });
+  });
 });
