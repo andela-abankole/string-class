@@ -79,3 +79,16 @@ String.prototype.ucFirst = function() {
   });
 };
 
+/**
+ * [isQuestion  capture group precede with a backslash to match a question mark `?`,
+ *              matches any character set at the end.
+ *              ]
+ * @return {Boolean}  [Return true if the string is a question (ending with a question mark)]
+ */
+String.prototype.isQuestion = function() {
+  var patt  = /(\?)$/gi,
+      _this = this;
+
+  return patt.test(_this);
+};
+
