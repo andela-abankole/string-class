@@ -1,16 +1,26 @@
 #!/bin/sh
 
 # install dependencies
-echo "Hi, $USER"
 echo "*************************"
+echo "*************************"
+echo "***** Hi, $USER ********"
+echo "*************************"
+echo "*************************"
+echo " "
 echo "installing dependencies ..."
 echo "*************************"
 npm install
 
 # start server 
-echo "serving on port 3000 ...." 
+echo " "
+echo "redirecting to localhost:4000 ... "
 echo "*************************"
+echo " "
+echo "serving on port 4000 ...." 
+npm start && fg
 
 # open browser
-echo "Please open your browser and go to localhost:3000 ....."
-npm start
+echo "*************************"
+echo " "
+echo "opening on Google Chrome Browser ... "
+open http://localhost:4000/jasmine/SpecRunner.html -a 'google chrome' &
