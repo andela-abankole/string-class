@@ -135,3 +135,17 @@ String.prototype.toCurrency = function() {
   return _this.replace(patt, re);
 };
 
+/**
+ * [fromCurrency  matches beginning of input, 
+ *                matches any character that is not a string,
+ *                precede with a backslash to match a period `.` literally
+ *                ]
+ * @return {[Number]} [Returns a number representation of the Currency String]
+ */
+String.prototype.fromCurrency = function() {
+  var patt  = /[^\d\.]/g,
+      re    = '',
+      _this = this;
+
+  return parseFloat(_this.replace(patt, re));
+};
