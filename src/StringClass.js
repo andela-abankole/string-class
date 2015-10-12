@@ -115,3 +115,23 @@ String.prototype.wordCount = function() {
   return _this.words().length;
 };
 
+/**
+ * [toCurrency  capture group matching any character that is not a string,
+ *              capture group containing two capture group and if not followed by the preceding regex,
+ *              capture group `1` matches `3` occurrences of any character that is not a string,
+ *              matches any character that contains at least one,
+ *              capture group `2` precede with a backslash to match a period `.` literally and any
+ *              character that is not a string,
+ *              $1 replacement pattern holds the first parenthesised submatch string,
+ *              (comma) character is a separator character
+ *              ]
+ * @return {[Srting]}  [Returns a currency representation of the String]
+ */
+String.prototype.toCurrency = function() {
+  var patt  = /(\d)(?=(\d{3})+(\.\d))/g,
+      re    = '$1,',
+      _this = this;
+
+  return _this.replace(patt, re);
+};
+
