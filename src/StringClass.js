@@ -34,3 +34,31 @@ String.prototype.toUpper = function() {
   return _this.replace(patt, upper);
 };
 
+/**
+ * [toLower find any uppercase character between the brackets]
+ * @return {[String]}  [Returns all characters in lowercases]
+ */
+String.prototype.toLower = function() {
+  var patt  = /[A-Z]/gi,
+      _this = this,
+      str;
+
+  /**
+   * [upperToLower performs a search and replace,
+   *               calls the lower() with `txt` argument,
+   *               matches the unicode character and adds 32,
+   *               converts the matched unicode character to ascii characters.
+   *               ]
+   * @return {[String]}
+   */
+  (function upperToLower() {
+    str = _this.replace(patt, lower);
+    function lower(txt) {
+      return String.fromCharCode(txt.charCodeAt(0) + 32);
+    }
+    return str;
+  })();
+
+  return str;
+};
+
