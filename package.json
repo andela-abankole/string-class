@@ -1,0 +1,24 @@
+{
+  "name": "string-class",
+  "version": "1.0.0",
+  "description": "extend the String class in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a localhost -p 4000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-abankole/string-class.git"
+  },
+  "author": "Akinjide Bankole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-abankole/string-class/issues"
+  },
+  "homepage": "https://github.com/andela-abankole/string-class#readme",
+  "dependencies": {
+    "http-server": "^0.8.5"
+  },
+  "devDependencies": {}
+}
