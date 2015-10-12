@@ -62,3 +62,20 @@ String.prototype.toLower = function() {
   return str;
 };
 
+/**
+ * [ucFirst  capture group,
+ *           find a character match at the end of a word,
+ *           match a word character,
+ *           match any character at least once
+ *           ]
+ * @return {[String]}  [convert first character of a word with toUpper method,
+ *                      concat the two result,
+ *                      convert strings at index 1 below in a word with toLower method
+ *                      ]
+ */
+String.prototype.ucFirst = function() {
+  return this.replace(/(\b\w)+/gi, function(txt){
+    return txt.charAt(0).toUpper() + txt.substr(1).toLower();
+  });
+};
+
