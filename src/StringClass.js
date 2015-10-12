@@ -92,3 +92,16 @@ String.prototype.isQuestion = function() {
   return patt.test(_this);
 };
 
+/**
+ * [words  matches a whitespace character,
+ *         matches at least one
+ *         ]
+ * @return {[String]}  [Returns a list of the words in the string, as an Array]
+ */
+String.prototype.words = function() {
+  var _this = this,
+      patt = /\s{1,}/;
+
+  return _this.split(patt);
+};
+
