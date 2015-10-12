@@ -105,3 +105,13 @@ String.prototype.words = function() {
   return _this.split(patt);
 };
 
+/**
+ * [wordCount uses the words() method and looks for the length]
+ * @return {[Number]}  [Returns the number of words in the string]
+ */
+String.prototype.wordCount = function() {
+  var _this = this;
+
+  return _this.words().length;
+};
+
