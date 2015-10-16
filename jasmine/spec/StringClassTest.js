@@ -11,6 +11,11 @@ describe('String Class', function() {
       expect(str.hasVowels()).toBeTruthy();
     });
 
+    it('should return false for `nymphs`', function() {
+      str = 'nymphs';
+      expect(str.hasVowels()).toBeFalsy();
+    });
+
     it('should be a typeof `Boolean`', function() {
       str = 'humans';
       expect(typeof str.hasVowels()).toEqual(typeof true);
@@ -27,6 +32,16 @@ describe('String Class', function() {
     it('should return `PLUTO` for `Pluto`', function() {
       str = 'pluto';
       expect(str.toUpper()).toEqual('PLUTO');
+    });
+
+    it('should return `TITAN` for `tITaN`', function() {
+      str = 'tITaN';
+      expect(str.toUpper()).toEqual('TITAN');
+    })
+
+    it('should return `STAR` for `STAR`', function() {
+      str = 'STAR';
+      expect(str.toUpper()).toEqual('STAR');
     });
 
     it('should be a typeof `String`', function() {
@@ -47,6 +62,16 @@ describe('String Class', function() {
       expect(str.toLower()).toEqual('sun');
     });
 
+    it('should return `asteroid` for `AsTEROid`', function() {
+      str = 'AsTEROid';
+      expect(str.toLower()).toEqual('asteroid')
+    });
+
+    it('should return `dark matter` for `dark matter`', function() {
+      str = 'dark matter';
+      expect(str.toLower()).toEqual('dark matter');
+    });
+
     it('should be a typeof `String`', function() {
       str = 'BLUE';
       expect(typeof str.toLower()).toEqual(typeof 'blue');
@@ -60,9 +85,14 @@ describe('String Class', function() {
       expect(str.ucFirst()).toEqual('Saturn');
     });
 
-    it('should return `Black Hole` for `black hole`', function() {
+    it('should return `Black hole` for `black hole`', function() {
       str = 'black hole';
-      expect(str.ucFirst()).toEqual('Black Hole');
+      expect(str.ucFirst()).toEqual('Black hole');
+    });
+
+    it('should return `Comet` for `Comet`', function() {
+      str = 'Comet';
+      expect(str.ucFirst()).toEqual('Comet');
     });
 
     it('should be a typeof `String`', function() {
@@ -81,6 +111,11 @@ describe('String Class', function() {
     it('should return true for `Are there black holes?`', function() {
       str = 'Are there black holes?';
       expect(str.isQuestion()).toBeTruthy();
+    });
+
+    it('should return false for `Is it outside Earth’s ?solar system`', function() {
+      str = 'Is it outside Earth’s ?solar system';
+      expect(str.isQuestion()).toBeFalsy();
     });
 
     it('should be a typeof `Boolean`', function() {
@@ -119,6 +154,11 @@ describe('String Class', function() {
       expect(str.wordCount()).toEqual(4);
     });
 
+    it('should return 0 for `""`', function() {
+      str = '';
+      expect(str.wordCount()).toEqual(0);
+    });
+
     it('should be a typeof `Number`', function() {
       str = 'Hello World';
       expect(typeof str.wordCount()).toEqual(typeof 2);
@@ -132,7 +172,7 @@ describe('String Class', function() {
       expect(str.toCurrency()).toEqual('11,111.11');
     });
 
-    it('should return `100,000.00` for `100000.00`', function() {
+    it('should return `1,000,000.00` for `1000000.00`', function() {
       str = '1000000.00';
       expect(str.toCurrency()).toEqual('1,000,000.00');
     });
