@@ -60,9 +60,8 @@ String.prototype.toLower = function() {
 
 /**
  * [ucFirst  capture group,
- *           find a character match at the end of a word,
- *           match a word character,
- *           match any character at least once
+ *           match any character at the beginning,
+ *           find any character between the brackets
  *           ]
  * @return {[String]}  [convert first character of a word with toUpper method,
  *                      concat the two result,
@@ -89,7 +88,12 @@ String.prototype.isQuestion = function() {
 };
 
 /**
- * [words  matches a whitespace character,
+ * [words  match any character at the beginning,
+ *         matches a whitespace character,
+ *         matches any character that contains zero or more occurrences,
+ *         matches any whitespace character at the end,
+ *         find any of the alternatives specified,
+ *         matches a whitespace character,
  *         matches at least one
  *         ]
  * @return {[String]}  [Returns a list of the words in the string, as an Array]
@@ -127,6 +131,7 @@ String.prototype.toCurrency = function() {
   var patt  = /(\d)(?=(\d{3})+(\.\d))/g,
       re    = '$1,',
       _this = this;
+
   return _this.replace(patt, re);
 };
 
