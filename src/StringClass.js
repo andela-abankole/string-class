@@ -1,4 +1,27 @@
 "use strict";
+// Global Variable
+var str;
+
+/**
+ * [upper matches the unicode character and subtracts 32]
+ * @param  {[String]} txt [contain regex solution]
+ * @return {[String]}     [convert `str` value to characters]
+ */
+function upper(txt) {
+  str = txt.charCodeAt(0) - 32;
+  return String.fromCharCode(str);
+}
+
+/**
+ * [lower  matches the unicode character and adds 32,
+ *         converts the matched unicode character to ascii characters.
+ *         ]
+ * @return {[String]}
+ */
+function lower(txt) {
+  return String.fromCharCode(txt.charCodeAt(0) + 32);
+}
+
 
 /**
  * [hasVowels find any character between the bracket,
@@ -10,26 +33,16 @@ String.prototype.hasVowels = function() {
   var _this = this,
       patt = /[aeiou]+/i;
 
-  return patt.test(_this) ? true : false;
+  return patt.test(_this);
 };
 
 /**
- * [toUpper find any lowercase character between the brackets]
+ * [toUpper find any lowercase character between the brackets and calls the upper function]
  * @return {[String]}  [Returns all characters in uppercase]
  */
 String.prototype.toUpper = function() {
-  var patt  = /[a-z]/gi,
-      _this = this,
-      str;
-  /**
-   * [upper matches the unicode character and subtracts 32]
-   * @param  {[String]} txt [contain regex solution]
-   * @return {[String]}     [convert `str` value to characters]
-   */
-  function upper(txt) {
-    str = txt.charCodeAt(0) - 32;
-    return String.fromCharCode(str);
-  }
+  var patt  = /[a-z]/g,
+      _this = this;
 
   return _this.replace(patt, upper);
 };
@@ -39,27 +52,10 @@ String.prototype.toUpper = function() {
  * @return {[String]}  [Returns all characters in lowercases]
  */
 String.prototype.toLower = function() {
-  var patt  = /[A-Z]/gi,
-      _this = this,
-      str;
+  var patt  = /[A-Z]/g,
+      _this = this;
 
-  /**
-   * [upperToLower performs a search and replace,
-   *               calls the lower() with `txt` argument,
-   *               matches the unicode character and adds 32,
-   *               converts the matched unicode character to ascii characters.
-   *               ]
-   * @return {[String]}
-   */
-  (function upperToLower() {
-    str = _this.replace(patt, lower);
-    function lower(txt) {
-      return String.fromCharCode(txt.charCodeAt(0) + 32);
-    }
-    return str;
-  })();
-
-  return str;
+  return _this.replace(patt, lower);;
 };
 
 /**
@@ -74,8 +70,8 @@ String.prototype.toLower = function() {
  *                      ]
  */
 String.prototype.ucFirst = function() {
-  return this.replace(/(\b\w)+/gi, function(txt){
-    return txt.charAt(0).toUpper() + txt.substr(1).toLower();
+  return this.replace(/^([a-z])/g, function(txt){
+    return String.fromCharCode(txt.charCodeAt(0) - 32);
   });
 };
 
@@ -100,7 +96,7 @@ String.prototype.isQuestion = function() {
  */
 String.prototype.words = function() {
   var _this = this,
-      patt = /\s{1,}/;
+      patt = /^\s*$|\s+/g;
 
   return _this.split(patt);
 };
@@ -131,7 +127,6 @@ String.prototype.toCurrency = function() {
   var patt  = /(\d)(?=(\d{3})+(\.\d))/g,
       re    = '$1,',
       _this = this;
-
   return _this.replace(patt, re);
 };
 
